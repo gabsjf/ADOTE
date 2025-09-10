@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ADOTE – Escola de Teatro. Cursos infantis, iniciação para jovens e formação de atores. Palco da sua transformação." />
+  <title>ADOTE – Escola de Teatro</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohG8WcJ6tBtY7CXvN5w7r79PpSkvUu8cg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --cor-principal: #D4AF37; /* dourado */
+      --cor-principal-2: #e4c55d;
+      --cor-fundo: #121212; /* preto/cinza escuro */
+      --cor-fundo-2: #1E1E1E; /* seção */
+      --cor-borda: #282828;
+      --cor-texto: #E0E0E0;
+      --cor-branco: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; background: var(--cor-fundo); color: var(--cor-texto); overflow-x: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--cor-principal); text-decoration: none; }
+    a:hover { color: var(--cor-branco); }
+
+    .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+    section { padding: 6rem 0; scroll-margin-top: 80px; }
+    .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cor-principal); margin-bottom: 2.5rem; }
+
+    /* Header */
+    header { position: fixed; inset: 0 0 auto 0; background: rgba(18,18,18,0.5); backdrop-filter: blur(10px); border-bottom: 1px solid var(--cor-borda); z-index: 1000; transition: all .3s ease; padding: 1rem 0; }
+    header.scrolled { background: rgba(18,18,18,0.9); padding: .6rem 0; box-shadow: 0 5px 20px rgba(0,0,0,.25); }
+    nav { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--cor-principal); letter-spacing: .5px; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { color: var(--cor-branco); font-weight: 400; position: relative; padding-bottom: 4px; }
+    .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; left: 0; bottom: 0; background: var(--cor-principal); transition: width .25s ease; }
+    .nav-links a:hover::after { width: 100%; }
+    .menu-btn { display: none; color: var(--cor-branco); font-size: 1.5rem; background: transparent; border: 0; cursor: pointer; }
+
+    /* Hero */
+    .hero { height: 100vh; display: flex; align-items: center; background:
+      linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+      url('https://images.unsplash.com/photo-1524383439343-f141681a9a88?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; }
+    .hero-content { color: var(--cor-branco); max-width: 720px; animation: fadeIn 1s ease; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+    .btn { display: inline-block; padding: .85rem 1.8rem; border-radius: 50px; font-weight: 500; letter-spacing: .3px; transition: all .25s ease; text-transform: uppercase; }
+    .btn-primary { background: var(--cor-principal); color: #0d0d0d; border: 2px solid var(--cor-principal); }
+    .btn-primary:hover { background: var(--cor-principal-2); border-color: var(--cor-principal-2); transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+    .btn-outline { background: transparent; border: 2px solid var(--cor-branco); color: var(--cor-branco); }
+    .btn-outline:hover { background: var(--cor-branco); color: #111; transform: translateY(-3px); }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(40px) } to { opacity: 1; transform: translateY(0) } }
+    .fade-in { opacity: 0; transform: translateY(40px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.active { opacity: 1; transform: translateY(0); }
+
+    /* Sobre */
+    .sobre { background: var(--cor-fundo); }
+    .sobre-wrap { display: flex; align-items: center; gap: 2.5rem; }
+    .sobre-img { flex: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,.35); }
+    .sobre-texto { flex: 1; }
+    .sobre-texto h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cor-branco); margin-bottom: .75rem; }
+    .sobre-texto p { margin-bottom: 1rem; font-size: 1.05rem; }
+
+    /* Cursos */
+    .cursos { background: var(--cor-fundo-2); }
+    .cursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .curso-card { background: var(--cor-fundo); border: 1px solid var(--cor-borda); border-radius: 10px; padding: 2rem; text-align: center; transition: transform .25s ease, box-shadow .25s ease; }
+    .curso-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,.35); }
+    .curso-card i { font-size: 2.6rem; color: var(--cor-principal); margin-bottom: 1rem; }
+    .curso-card h3 { font-family: 'Playfair Display', serif; color: var(--cor-branco); margin-bottom: .5rem; }
+
+    /* Depoimentos (slider) */
+    .testimonials { background: var(--cor-fundo); }
+    .testimonial-slider { position: relative; overflow: hidden; }
+    .testimonial-track { display: flex; transition: transform .5s ease; }
+    .testimonial { min-width: 100%; padding: 0 1rem; }
+    .testimonial-content { background: var(--cor-fundo-2); border: 1px solid var(--cor-borda); padding: 2rem; border-radius: 10px; position: relative; }
+    .testimonial-content::after { content: ''; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); border-width: 20px 20px 0; border-style: solid; border-color: var(--cor-fundo-2) transparent transparent; }
+    .testimonial p { font-style: italic; line-height: 1.8; }
+    .testimonial-author { margin-top: 1.25rem; text-align: center; color: var(--cor-principal); }
+    .slider-nav { display: flex; justify-content: center; gap: .6rem; margin-top: 1.2rem; }
+    .slider-btn { background: var(--cor-principal); color: #111; width: 42px; height: 42px; border-radius: 50%; border: 0; cursor: pointer; display: grid; place-items: center; }
+
+    /* Galeria */
+    .gallery { background: var(--cor-fundo-2); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; }
+    .gallery-item { border-radius: 10px; overflow: hidden; position: relative; height: 230px; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .gallery-overlay { position: absolute; inset: 0; background: rgba(212,175,55,0.25); display: grid; place-items: center; opacity: 0; transition: opacity .25s ease; }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* Contato */
+    .contact { background: var(--cor-fundo); }
+    .contact-wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; }
+    .contact-info h3 { font-family: 'Playfair Display', serif; color: var(--cor-branco); margin-bottom: .75rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1rem; }
+    .contact-item i { color: var(--cor-principal); margin-top: .2rem; }
+    .social-links { display: flex; gap: .75rem; margin-top: 1rem; }
+    .social-link { width: 40px; height: 40px; border-radius: 50%; background: var(--cor-fundo-2); border: 1px solid var(--cor-borda); color: var(--cor-branco); display: grid; place-items: center; }
+
+    .contact-form form { display: grid; gap: .9rem; }
+    .form-control { width: 100%; background: var(--cor-fundo-2); border: 1px solid var(--cor-borda); color: var(--cor-branco); padding: .9rem 1rem; border-radius: 8px; outline: none; }
+    .form-control::placeholder { color: #aaa; }
+
+    /* Footer */
+    footer { background: var(--cor-fundo-2); border-top: 1px solid var(--cor-borda); color: var(--cor-texto); padding: 3rem 0 1rem; }
+    .footer-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-col h4 { font-family: 'Playfair Display', serif; color: var(--cor-branco); margin-bottom: .8rem; }
+    .footer-col a { color: #bbb; }
+    .footer-col a:hover { color: var(--cor-principal); }
+    .newsletter { display: flex; }
+    .newsletter input { flex: 1; padding: .8rem; border: none; border-radius: 6px 0 0 6px; background: var(--cor-fundo); color: var(--cor-branco); border: 1px solid var(--cor-borda); }
+    .newsletter button { border: 0; background: var(--cor-principal); color: #111; padding: 0 1rem; border-radius: 0 6px 6px 0; cursor: pointer; }
+    .copyright { text-align: center; font-size: .95rem; color: #bdbdbd; border-top: 1px solid var(--cor-borda); padding-top: 1.2rem; }
+
+    /* WhatsApp Float (opcional) */
+    .whatsapp-float { position: fixed; width: 52px; height: 52px; right: 18px; bottom: 18px; background: #25D366; color: white; display: grid; place-items: center; border-radius: 50%; box-shadow: 0 10px 24px rgba(0,0,0,.35); z-index: 1001; }
+    .whatsapp-float:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+      .sobre-wrap { flex-direction: column; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 78%; background: #0f0f0f; flex-direction: column; align-items: center; justify-content: center; gap: 1.25rem; transition: right .45s ease; z-index: 999; }
+      .nav-links.active { right: 0; }
+      .menu-btn { display: block; }
+      .hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <nav>
+        <a href="#hero" class="logo">ADOTE</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- WhatsApp (opcional) -->
+  <a class="whatsapp-float" href="https://wa.me/5567999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20cursos%20da%20ADOTE." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Palco da sua Transformação</h1>
+        <p>Descubra o artista que existe em você. Aulas de teatro para todas as idades e níveis.</p>
+        <div class="hero-btns">
+          <a href="#cursos" class="btn btn-primary">Conheça os Cursos</a>
+          <a href="#contato" class="btn btn-outline">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre a ADOTE</h2>
+      <div class="sobre-wrap">
+        <div class="sobre-img fade-in">
+          <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?q=80&w=2070&auto=format&fit=crop" alt="Palco de teatro com cortinas vermelhas" loading="lazy">
+        </div>
+        <div class="sobre-texto fade-in">
+          <h3>Arte, técnica e sensibilidade</h3>
+          <p>Fundada por apaixonados pela arte da atuação, a ADOTE é mais do que uma escola: é um espaço de criação, expressão e autoconhecimento. Nossa missão é oferecer uma formação teatral sólida e humanizada, revelando o potencial de cada aluno.</p>
+          <p>Com uma metodologia que une técnica e sensibilidade, preparamos nossos artistas para os palcos e para a vida.</p>
+          <a href="#cursos" class="btn btn-primary">Ver Cursos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cursos -->
+  <section class="cursos" id="cursos">
+    <div class="container">
+      <h2 class="section-title">Nossos Cursos</h2>
+      <div class="cursos-grid">
+        <div class="curso-card fade-in">
+          <i class="fas fa-child-reaching" aria-hidden="true"></i>
+          <h3>Teatro Infantil</h3>
+          <p>Jogos teatrais, improvisação e contação de histórias para desenvolver a criatividade e a desinibição dos pequenos.</p>
+        </div>
+        <div class="curso-card fade-in">
+          <i class="fas fa-user-ninja" aria-hidden="true"></i>
+          <h3>Iniciação para Jovens</h3>
+          <p>Técnicas de voz, corpo e interpretação. O primeiro passo para quem sonha em atuar e se expressar no palco.</p>
+        </div>
+        <div class="curso-card fade-in">
+          <i class="fas fa-masks-theater" aria-hidden="true"></i>
+          <h3>Formação de Atores</h3>
+          <p>Curso completo e aprofundado do clássico ao contemporâneo, com preparação para o mercado profissional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <h2 class="section-title">Depoimentos</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-track">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>“A ADOTE me deu confiança e técnica. O ambiente é acolhedor e os professores, incríveis.”</p>
+              <div class="testimonial-author">— Maria S.</div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>“Foi meu primeiro contato com o palco e saí transformado. Recomendo para todas as idades!”</p>
+              <div class="testimonial-author">— João P.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn" id="prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn" id="next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <h2 class="section-title">Galeria</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1473896100090-53523650d4fd?q=80&w=1974&auto=format&fit=crop" alt="Cena teatral 1" loading="lazy">
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1503241858519-8e2b04a3a1b1?q=80&w=1974&auto=format&fit=crop" alt="Cena teatral 2" loading="lazy">
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1974&auto=format&fit=crop" alt="Cena teatral 3" loading="lazy">
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://images.unsplash.com/photo-1540040595300-456e1271a96b?q=80&w=1974&auto=format&fit=crop" alt="Cena teatral 4" loading="lazy">
+          <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="contact" id="contato">
+    <div class="container">
+      <h2 class="section-title">Entre em Contato</h2>
+      <div class="contact-wrap">
+        <div class="contact-info fade-in">
+          <h3>Fale com a ADOTE</h3>
+          <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Telefone</strong><br>(67) 9 9999-9999</div></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><br>contato@adote.com.br</div></div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Endereço</strong><br>Rua Exemplo, 123 – Campo Grande, MS</div></div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="contact-form fade-in">
+          <form action="#" method="POST">
+            <input type="text" class="form-control" name="nome" placeholder="Seu nome" required>
+            <input type="email" class="form-control" name="email" placeholder="Seu email" required>
+            <textarea class="form-control" name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+          <p style="margin-top:.6rem;font-size:.9rem;color:#bdbdbd">Dica: use <code>https://formsubmit.co</code> e substitua o <em>action</em> acima pelo seu e‑mail para receber as mensagens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Links</h4>
+          <p><a href="#hero">Início</a> · <a href="#sobre">Sobre</a> · <a href="#cursos">Cursos</a> · <a href="#contato">Contato</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <form class="newsletter" action="#" method="POST">
+            <input type="email" name="email" placeholder="Seu email" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+        <div class="footer-col">
+          <h4>Endereço</h4>
+          <p>Rua Exemplo, 123 – Campo Grande, MS</p>
+        </div>
+      </div>
+      <div class="copyright">© 2025 ADOTE – Escola de Teatro. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Header scrolled state
+    const headerEl = document.getElementById('header');
+    const onScroll = () => headerEl.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+
+    // Fade-in via IntersectionObserver
+    const faders = document.querySelectorAll('.fade-in');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); io.unobserve(entry.target); } });
+    }, { threshold: 0.15 });
+    faders.forEach(el => io.observe(el));
+
+    // Testimonial slider
+    const track = document.querySelector('.testimonial-track');
+    const slides = document.querySelectorAll('.testimonial');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let idx = 0;
+    const updateSlider = () => { track.style.transform = `translateX(-${idx * 100}%)`; };
+    prev.addEventListener('click', () => { idx = (idx > 0 ? idx - 1 : slides.length - 1); updateSlider(); });
+    next.addEventListener('click', () => { idx = (idx < slides.length - 1 ? idx + 1 : 0); updateSlider(); });
+  </script>
+</body>
+</html>

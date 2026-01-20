@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Festivais - ADOTE</title>
+    <title>Festivais e Mostras - ADOTE</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Mantendo a vibe das galerias anteriores */
+        /* Estilos para manter a consistência visual */
         body {
             background-color: #0f0f0f;
             color: #ffffff;
@@ -39,10 +39,11 @@
             transform: translateX(-5px);
         }
 
-        /* GRID MASONRY PARA 12 FOTOS */
+        /* GRID DE FOTOS (12 FOTOS: ft1 até ft12) */
         .photo-grid {
             column-count: 4;
             column-gap: 15px;
+            margin-bottom: 60px;
         }
 
         .photo-item {
@@ -51,34 +52,87 @@
             margin-bottom: 15px;
             border-radius: 8px;
             overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             border: 1px solid #333;
+            transition: 0.4s;
         }
 
         .photo-item img {
             width: 100%;
             display: block;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s;
         }
 
-        /* Efeitos de Interação */
         .photo-item:hover {
-            transform: translateY(-5px);
             border-color: #e63946;
-            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.3);
+            transform: translateY(-5px);
         }
 
         .photo-item:hover img {
-            transform: scale(1.08);
-            filter: brightness(1.1);
+            transform: scale(1.05);
         }
 
-        /* Responsividade */
-        @media (max-width: 1024px) { .photo-grid { column-count: 3; } }
-        @media (max-width: 768px) { .photo-grid { column-count: 2; } }
-        @media (max-width: 480px) { .photo-grid { column-count: 1; } }
+        /* SEÇÃO CRONOLÓGICA (LINHA DO TEMPO) */
+        .history-section {
+            padding: 40px 0;
+            border-top: 1px solid #333;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .year-block {
+            margin-bottom: 35px;
+            padding-left: 20px;
+            border-left: 3px solid #e63946;
+            position: relative;
+        }
+
+        .year-block::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #e63946;
+            border-radius: 50%;
+        }
+
+        .year-title {
+            font-size: 1.6rem;
+            color: #e63946;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .event-item {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .event-name {
+            font-size: 1.1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .event-link {
+            font-size: 0.9rem;
+            color: #e9c46a; /* Amarelo da logo */
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .event-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid { column-count: 2; }
+        }
     </style>
 </head>
 <body>
@@ -86,24 +140,90 @@
     <div class="gallery-container">
         <header class="gallery-header">
             <a href="index.html" class="btn-back">← Voltar para o Início</a>
-            <h1>Galeria de Festivais</h1>
-            <p>Momentos marcantes da ADOTE em grandes festivais e premiações de teatro.</p>
+            <h1>🎪 Festivais, Mostras e Saraus</h1>
+            <p>Registros e cronologia dos eventos realizados pela ADOTE.</p>
         </header>
 
         <main class="photo-grid">
-            <div class="photo-item"><img src="src/ft1.jpeg" alt="Festival ADOTE 1"></div>
-            <div class="photo-item"><img src="src/ft2.jpeg" alt="Festival ADOTE 2"></div>
-            <div class="photo-item"><img src="src/ft3.jpeg" alt="Festival ADOTE 3"></div>
-            <div class="photo-item"><img src="src/ft4.jpeg" alt="Festival ADOTE 4"></div>
-            <div class="photo-item"><img src="src/ft5.jpeg" alt="Festival ADOTE 5"></div>
-            <div class="photo-item"><img src="src/ft6.jpeg" alt="Festival ADOTE 6"></div>
-            <div class="photo-item"><img src="src/ft7.jpeg" alt="Festival ADOTE 7"></div>
-            <div class="photo-item"><img src="src/ft8.jpeg" alt="Festival ADOTE 8"></div>
-            <div class="photo-item"><img src="src/ft9.jpeg" alt="Festival ADOTE 9"></div>
-            <div class="photo-item"><img src="src/ft10.jpeg" alt="Festival ADOTE 10"></div>
-            <div class="photo-item"><img src="src/ft11.jpeg" alt="Festival ADOTE 11"></div>
-            <div class="photo-item"><img src="src/ft12.jpeg" alt="Festival ADOTE 12"></div>
+            <div class="photo-item"><img src="src/ft1.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft2.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft3.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft4.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft5.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft6.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft7.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft8.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft9.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft10.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft11.jpeg" alt="Festival ADOTE"></div>
+            <div class="photo-item"><img src="src/ft12.jpeg" alt="Festival ADOTE"></div>
         </main>
+
+        <section class="history-section">
+            <div class="timeline-container">
+                
+                <div class="year-block">
+                    <div class="year-title">2025</div>
+                    <li class="event-item">
+                        <span class="event-name">2º Festival Drama em Cena – Prêmio Beth Terras</span>
+                        <a href="https://oestadoonline.com.br/arte-e-lazer/ii-festival-drama-em-cena-premio-beth-terras/" target="_blank" class="event-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2024</div>
+                    <li class="event-item">
+                        <span class="event-name">4º Festival de Esquetes</span>
+                        <a href="https://oestadoonline.com.br/arte-e-lazer/escola-de-teatro-adote-realiza-quarta-edicao-do-festival-de-esquetes-neste-sabado/" target="_blank" class="event-link">Ver notícia →</a>
+                    </li>
+                    <li class="event-item">
+                        <span class="event-name">Saraguá – Sarau</span>
+                        <a href="https://www.instagram.com/p/C7FmWw8Jbd2/?igsh=b21wbXFtbnFlOGE3" target="_blank" class="event-link">Ver no Instagram →</a>
+                    </li>
+                    <li class="event-item">
+                        <span class="event-name">1º Festival Drama em Cena</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/diversao/companhia-apresenta-novos-talentos-com-pecas-sobre-vida-e-morte" target="_blank" class="event-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2023</div>
+                    <li class="event-item">
+                        <span class="event-name">3º Festival de Esquetes</span>
+                        <a href="https://www.instagram.com/p/CytPsmSuISf/?igsh=MTBnNTVydzVoMGF3ag%3D%3D" target="_blank" class="event-link">Ver no Instagram →</a>
+                    </li>
+                    <li class="event-item">
+                        <span class="event-name">Saraguá – Sarau</span>
+                        <a href="https://www.instagram.com/reel/CyOPzbXOSMI/?igsh=dW55eHIxMmFrNjg2" target="_blank" class="event-link">Ver no Instagram →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2021 / 2022</div>
+                    <li class="event-item">
+                        <span class="event-name">Festival de Cenas Curtas</span>
+                        <a href="https://www.instagram.com/p/CXKZTJolJJ2/?igsh=ajYxdGVyaGtwZ210" target="_blank" class="event-link">Ver no Instagram →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2019</div>
+                    <li class="event-item">
+                        <span class="event-name">2º Festival de Esquetes</span>
+                        <span style="color: #666; font-size: 0.85rem;">Sem link disponível</span>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2018</div>
+                    <li class="event-item">
+                        <span class="event-name">1º Festival de Esquetes</span>
+                        <a href="https://www.instagram.com/p/BrdbaH6HXMu/?igsh=aWExY2N2NmpsNWQw" target="_blank" class="event-link">Ver no Instagram →</a>
+                    </li>
+                </div>
+
+            </div>
+        </section>
     </div>
 
 </body>

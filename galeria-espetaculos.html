@@ -87,6 +87,74 @@
         @media (max-width: 480px) {
             .photo-grid { column-count: 1; }
         }
+        /* Seção do Histórico */
+.history-section {
+    padding: 60px 0;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+.timeline-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.year-block {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 3px solid #e63946; /* Vermelho ADOTE */
+    position: relative;
+}
+
+.year-block::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 13px;
+    height: 13px;
+    background-color: #e63946;
+    border-radius: 50%;
+}
+
+.year-title {
+    font-size: 1.8rem;
+    color: #e63946;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.play-item {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.play-name {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+    display: block;
+}
+
+.play-link {
+    font-size: 0.9rem;
+    color: #e9c46a; /* Amarelo da logo */
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.play-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.no-link {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
     </style>
 </head>
 <body>
@@ -121,6 +189,139 @@
             <div class="photo-item"><img src="src/foto20.jpeg" alt="Espetáculo ADOTE 20"></div>
         </main>
     </div>
+<section class="history-section">
+        <div class="container timeline-container">
+            <h2 class="section-title">Histórico de Montagens</h2>
+            <p style="text-align: center; margin-bottom: 50px; color: #ccc;">
+                Uma trajetória de arte iniciada em 2002, marcada pela criação cênica e formação artística.
+            </p>
 
+            <div class="timeline">
+                <div class="year-block">
+                    <div class="year-title">2026</div>
+                    <li class="play-item">
+                        <span class="play-name">O Pagador de Promessas</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/artes-23-08-2011-08/teatro-aracy-balabanian-abre-cortinas-para-peca-o-pagador-de-promessas" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2025</div>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta – Especial Beth Terras</span>
+                        <a href="https://primeirapagina.com.br/cultura/arte-de-quinta-retorna-aos-palcos-e-homenageia-fundadora-beth-terras/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Deu a Louca no País das Maravilhas</span>
+                        <a href="https://www.instagram.com/p/DPl7dsJjbhr/?utm_source=ig_web_copy_link" target="_blank" class="play-link">Ver no Instagram →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Peter Pan no Cerrado</span>
+                        <a href="https://www.topmidianews.com.br/campo-grande/comedia-infanto-juvenil-peter-pan-no-cerrado-chega-a-campo-grande/231787/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">O Beijo no Asfalto</span>
+                        <a href="https://www.instagram.com/p/DRPnXLaDdIl/?utm_source=ig_web_copy_link" target="_blank" class="play-link">Ver no Instagram →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2024</div>
+                    <li class="play-item">
+                        <span class="play-name">Eles Não Usam Black-Tie</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/diversao/campo-grande-tera-classico-brasileiro-eles-nao-usam-black-tie" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2023</div>
+                    <li class="play-item">
+                        <span class="play-name">O Beijo no Asfalto</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/artes-23-08-2011-08/peca-de-nelson-rodrigues-o-beijo-no-asfalto-estreia-na-capital" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Boca de Ouro</span>
+                        <a href="https://midiamax.com.br/midiamais/2023/boca-de-ouro-e-espetaculo-que-estreia-em-campo-grande-e-traz-reflexao-sobre-verdade-manipulada/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2022</div>
+                    <li class="play-item">
+                        <span class="play-name">Aos Porcos</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/diversao/aos-porcos-a-comedia-entre-patrao-e-mordomo-endividados-estreia-sabado" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2018 - 2019</div>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta (2019)</span>
+                        <a href="https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2019/07/03/campo-grande-recebe-festival-de-palhacaria-e-espetaculos-teatrais.ghtml" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Que Humilhação (2018)</span>
+                        <a href="https://www.fundacaodecultura.ms.gov.br/noite-de-homenagens-marca-abertura-oficial-da-mostra-de-teatro-boca-de-cena-2018/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Por Trás das Luzes (2018)</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/artes-23-08-2011-08/espetaculo-estreia-com-drama-de-atriz-que-sente-a-decadencia-aos-40-anos" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2010 - 2015</div>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta (2015)</span>
+                        <a href="https://www.fundacaodecultura.ms.gov.br/o-lado-crianca-dos-adultos-sera-abordado-neste-domingo-em-campo-grande.html" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta (2014)</span>
+                        <a href="https://correiodoestado.com.br/correio-b/show-de-humor-arte-de-quinta-aborda-o-lado-crianca-dos-adultos/229071/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta (2012)</span>
+                        <a href="https://www.campograndenews.com.br/lado-b/diversao/grupo-teatral-adote-apresenta-espetaculo-no-proximo-dia-28" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta (2010)</span>
+                        <a href="https://www.campograndenews.com.br/entretenimento/arte-de-quinta-na-quarta-sera-apresentada-no-sabado-05-12-2010" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">2011</div>
+                    <li class="play-item">
+                        <span class="play-name">Três Contos que vou te Contar</span>
+                        <a href="https://midiamax.com.br/midiamais/2011/projeto-teatro-na-arena-recebe-a-peca-tres-contos-que-vou-te-contar/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">João e Maria</span>
+                        <a href="https://g1.globo.com/mato-grosso-do-sul/noticia/2011/06/teatro-de-arena-tem-joao-e-maria-neste-domingo-em-campo-grande.html" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                </div>
+
+                <div class="year-block">
+                    <div class="year-title">Início da Trajetória</div>
+                    <li class="play-item">
+                        <span class="play-name">Assim Nasceu Campo Grande (2009)</span>
+                        <a href="https://correiodoestado.com.br/cidades/a-peca-e-assim-nasceu-campo-grande-sera-encenada-amanha/8218/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">O Julgamento da Dona Poluição (2008)</span>
+                        <span class="no-link">Sem link disponível</span>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Arte de Quinta (2007)</span>
+                        <a href="https://www.opantaneiro.com.br/eventos/cia-teatral-adote-apresenta-espetaculo-amanha-na-capital/64924/" target="_blank" class="play-link">Ver notícia →</a>
+                    </li>
+                    <li class="play-item">
+                        <span class="play-name">Os Espantalhos (2004)</span>
+                        <span class="no-link">Sem link disponível</span>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

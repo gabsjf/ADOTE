@@ -439,7 +439,7 @@ section {
 }
 
 .performance-section h3 {
-    color: var(--color-navy);
+    color: #ffd700;
     margin-bottom: var(--spacing-md);
 }
 
@@ -1445,3 +1445,39 @@ section {
     margin-bottom: 35px;
     line-height: 1.6;
 }
+
+.member-photo{
+    max-width: 1200px; /* Ou a largura que o seu site usa como padrão */
+    margin: 0 auto;    /* Isso centraliza o bloco todo na página */
+    padding: 0 20px;   /* Garante que os cards não encostem na borda em telas menores */
+}
+
+.tribute-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.tribute-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.tribute-info h3 {
+    color: #c62828;
+    margin-bottom: 8px;
+}
+
+.tribute-info p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+

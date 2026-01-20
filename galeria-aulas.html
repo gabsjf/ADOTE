@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Aulas - ADOTE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos customizados para a Galeria */
+        body {
+            background-color: #0f0f0f; /* Fundo bem escuro para destacar as fotos */
+            color: #ffffff;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: #e63946;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            color: #ff4d5a;
+            transform: translateX(-5px);
+        }
+
+        /* CONFIGURAÇÃO DO GRID DE 17 FOTOS */
+        .photo-grid {
+            /* Cria 4 colunas no desktop */
+            column-count: 4;
+            column-gap: 15px;
+        }
+
+        .photo-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+
+        .photo-item img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Efeito ao passar o mouse */
+        .photo-item:hover {
+            transform: scale(1.03);
+            border-color: #e63946;
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 1000px) {
+            .photo-grid { column-count: 3; }
+        }
+
+        @media (max-width: 700px) {
+            .photo-grid { column-count: 2; }
+        }
+
+        @media (max-width: 480px) {
+            .photo-grid { column-count: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        <header class="gallery-header">
+            <a href="index.html" class="btn-back">← Voltar para o Início</a>
+            <h1>Galeria de Aulas</h1>
+            <p>Confira os bastidores e a preparação dos nossos alunos da ADOTE.</p>
+        </header>
+
+        <main class="photo-grid">
+            <div class="photo-item"><img src="src/img1.jpeg" alt="Aula ADOTE 1"></div>
+            <div class="photo-item"><img src="src/img2.jpeg" alt="Aula ADOTE 2"></div>
+            <div class="photo-item"><img src="src/img3.jpeg" alt="Aula ADOTE 3"></div>
+            <div class="photo-item"><img src="src/img4.jpeg" alt="Aula ADOTE 4"></div>
+            <div class="photo-item"><img src="src/img5.jpeg" alt="Aula ADOTE 5"></div>
+            <div class="photo-item"><img src="src/img6.jpeg" alt="Aula ADOTE 6"></div>
+            <div class="photo-item"><img src="src/img7.jpeg" alt="Aula ADOTE 7"></div>
+            <div class="photo-item"><img src="src/img8.jpeg" alt="Aula ADOTE 8"></div>
+            <div class="photo-item"><img src="src/img9.jpeg" alt="Aula ADOTE 9"></div>
+            <div class="photo-item"><img src="src/img10.jpeg" alt="Aula ADOTE 10"></div>
+            <div class="photo-item"><img src="src/img11.jpeg" alt="Aula ADOTE 11"></div>
+            <div class="photo-item"><img src="src/img12.jpeg" alt="Aula ADOTE 12"></div>
+            <div class="photo-item"><img src="src/img13.jpeg" alt="Aula ADOTE 13"></div>
+            <div class="photo-item"><img src="src/img14.jpeg" alt="Aula ADOTE 14"></div>
+            <div class="photo-item"><img src="src/img15.jpeg" alt="Aula ADOTE 15"></div>
+            <div class="photo-item"><img src="src/img16.jpeg" alt="Aula ADOTE 16"></div>
+            <div class="photo-item"><img src="src/img17.jpeg" alt="Aula ADOTE 17"></div>
+        </main>
+    </div>
+
+</body>
+</html>

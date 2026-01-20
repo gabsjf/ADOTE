@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Festivais - ADOTE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mantendo a vibe das galerias anteriores */
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: #e63946;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            color: #ff4d5a;
+            transform: translateX(-5px);
+        }
+
+        /* GRID MASONRY PARA 12 FOTOS */
+        .photo-grid {
+            column-count: 4;
+            column-gap: 15px;
+        }
+
+        .photo-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        .photo-item img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Efeitos de Interação */
+        .photo-item:hover {
+            transform: translateY(-5px);
+            border-color: #e63946;
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.3);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) { .photo-grid { column-count: 3; } }
+        @media (max-width: 768px) { .photo-grid { column-count: 2; } }
+        @media (max-width: 480px) { .photo-grid { column-count: 1; } }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        <header class="gallery-header">
+            <a href="index.html" class="btn-back">← Voltar para o Início</a>
+            <h1>Galeria de Festivais</h1>
+            <p>Momentos marcantes da ADOTE em grandes festivais e premiações de teatro.</p>
+        </header>
+
+        <main class="photo-grid">
+            <div class="photo-item"><img src="src/ft1.jpeg" alt="Festival ADOTE 1"></div>
+            <div class="photo-item"><img src="src/ft2.jpeg" alt="Festival ADOTE 2"></div>
+            <div class="photo-item"><img src="src/ft3.jpeg" alt="Festival ADOTE 3"></div>
+            <div class="photo-item"><img src="src/ft4.jpeg" alt="Festival ADOTE 4"></div>
+            <div class="photo-item"><img src="src/ft5.jpeg" alt="Festival ADOTE 5"></div>
+            <div class="photo-item"><img src="src/ft6.jpeg" alt="Festival ADOTE 6"></div>
+            <div class="photo-item"><img src="src/ft7.jpeg" alt="Festival ADOTE 7"></div>
+            <div class="photo-item"><img src="src/ft8.jpeg" alt="Festival ADOTE 8"></div>
+            <div class="photo-item"><img src="src/ft9.jpeg" alt="Festival ADOTE 9"></div>
+            <div class="photo-item"><img src="src/ft10.jpeg" alt="Festival ADOTE 10"></div>
+            <div class="photo-item"><img src="src/ft11.jpeg" alt="Festival ADOTE 11"></div>
+            <div class="photo-item"><img src="src/ft12.jpeg" alt="Festival ADOTE 12"></div>
+        </main>
+    </div>
+
+</body>
+</html>

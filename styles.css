@@ -1481,3 +1481,234 @@ section {
     line-height: 1.4;
 }
 
+/* Estilização da Seção de Oficinas - Alinhada à Esquerda */
+.workshops {
+    padding: 40px 0; /* Reduzi o padding para a seção não ficar tão grande */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.workshops-content {
+    max-width: 800px;
+    margin-left: 0; /* Remove a centralização do bloco */
+    margin-right: auto;
+}
+
+.workshops-content p {
+    font-size: 1.1rem; /* Ajuste leve no tamanho para ficar mais discreto */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: left; /* Garante o alinhamento do parágrafo */
+}
+
+.workshops-action {
+    margin-top: 15px;
+    display: flex; /* Uso de flex para garantir que o botão não estique */
+    justify-content: flex-start; /* Botão alinhado no início (esquerda) */
+}
+
+/* O botão discreto que você pediu anteriormente */
+.btn-discrete {
+    display: inline-block;
+    padding: 8px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.btn-discrete:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #e63946;
+    color: #e63946;
+}
+
+.oficinas-wrapper {
+    padding: 20px 0;   /* Espaçamento sutil para não colar no conteúdo acima */
+    text-align: left;  /* Alinhamento total à esquerda */
+}
+
+.btn-discrete {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;      /* Fonte menor e mais discreta */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda fina e semi-transparente */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-discrete:hover {
+    border-color: #e63946;   /* Cor de destaque do site no hover */
+    color: #e63946;
+    background-color: rgba(255, 255, 255, 0.05);
+}   
+
+/* Ajustes para Telas Mobile (até 768px) */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column; /* Empilha logo e menu */
+        padding: 10px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;       /* Permite que os itens quebrem linha */
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        font-size: 14px;      /* Diminui um pouco a fonte */
+    }
+
+    /* Garante que o botão de login tenha destaque mesmo no mobile */
+    .login-button {
+        padding: 8px 15px;
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+
+
+/* Ajustes para Telas Mobile (até 768px) */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column; /* Empilha logo e menu */
+        padding: 10px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;       /* Permite que os itens quebrem linha */
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        font-size: 14px;      /* Diminui um pouco a fonte */
+    }
+
+    /* Garante que o botão de login tenha destaque mesmo no mobile */
+    .login-button {
+        padding: 8px 15px;
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+
+/* Ajustes para Celular (Mobile) */
+@media (max-width: 768px) {
+    /* Ajusta a barra principal */
+    .navbar .container {
+        display: flex;
+        flex-direction: row; /* Mantém logo e menu na mesma linha */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    /* Transforma o menu em uma lista suspensa ou compacta */
+    .nav-menu {
+        display: none; /* Esconde o menu de texto no mobile por enquanto */
+        /* Se você quiser que ele apareça empilhado, mude para: */
+        /* display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #1a1a1a; */
+    }
+
+    /* FORÇA O BOTÃO ÁREA DO ALUNO A APARECER */
+    /* Vamos tirar ele de dentro da lista para ele ficar sempre visível no topo */
+    .login-button {
+        display: block !important;
+        font-size: 12px;
+        padding: 6px 12px;
+        margin: 0;
+        position: relative;
+    }
+}
+
+
+/* --- Ajustes para o Card da Beth Terras no Mobile --- */
+@media (max-width: 768px) {
+    /* 1. Muda a direção do card para coluna (empilha) */
+    .tribute-card {
+        flex-direction: column;
+        text-align: center; /* Centraliza o texto */
+        padding: 25px 15px; /* Ajusta o espaçamento interno */
+        gap: 15px; /* Espaço entre a foto e o texto */
+    }
+
+    /* 2. Ajusta o tamanho da imagem para não ficar gigante */
+    .tribute-card img, 
+    .beth-photo { /* Usando ambos os seletores por garantia */
+        width: 100%;
+        max-width: 250px; /* Limita a largura máxima */
+        height: auto;     /* Mantém a proporção */
+        margin: 0 auto;   /* Centraliza a imagem horizontalmente */
+    }
+
+    /* 3. Garante que o texto ocupe a largura disponível */
+    .tribute-info,
+    .tribute-text {
+        width: 100%;
+    }
+}
+
+
+/* --- Ajuste do Botão Área do Aluno na Navbar Mobile --- */
+@media (max-width: 768px) {
+    .navbar .login-button {
+        /* Reduz o "recheio" do botão */
+        padding: 8px 15px !important; 
+        
+        /* Diminui ligeiramente o tamanho da fonte */
+        font-size: 14px !important;
+        
+        /* Garante que a altura da linha não estique o botão */
+        line-height: 1.2 !important;
+        
+        /* Remove qualquer altura fixa que possa estar sendo herdada */
+        height: auto;
+        
+        /* Centraliza verticalmente se necessário */
+        align-self: center;
+    }
+}
+
+/* --- Navbar Slim para Mobile --- */
+@media (max-width: 768px) {
+    /* 1. Reduz a altura da barra principal */
+    .header, .navbar {
+        padding: 5px 0 !important; /* Diminui o respiro no topo e na base */
+    }
+
+    /* 2. Diminui o tamanho da logo para ela não esticar a barra */
+    .logo-img {
+        max-height: 35px !important; /* Ajuste conforme necessário */
+        width: auto;
+    }
+
+    /* 3. Deixa o botão "Área do Aluno" bem mais discreto */
+    .login-button {
+        padding: 6px 10px !important; /* Reduz o recheio do botão */
+        font-size: 11px !important;    /* Letra menor para caber em uma linha */
+        white-space: nowrap;           /* Impede que o texto quebre em duas linhas */
+        line-height: 1 !important;
+        border-radius: 4px !important;
+        margin: 0 !important;
+    }
+
+    /* 4. Ajusta o container para que fiquem bem alinhados no centro da barra */
+    .navbar .container {
+        min-height: 50px !important; /* Define uma altura fixa baixa para a barra */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

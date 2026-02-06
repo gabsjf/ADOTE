@@ -183,43 +183,10 @@ a:hover {
    HERO SECTION - LAYOUT ASSIMÉTRICO
    ============================================ */
 
-.hero {
-    background: linear-gradient(135deg, var(--color-navy) 0%, #2d3a5c 100%);
-    color: var(--color-text-light);
-    padding: var(--spacing-xxl) var(--spacing-lg);
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 600px;
-}
+
 
 /* Elementos gráficos de fundo */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255, 85, 85, 0.25) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float1 15s infinite ease-in-out;
-}
 
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    right: -150px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(0, 102, 255, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float2 18s infinite ease-in-out;
-}
 
 @keyframes float1 {
     0%, 100% { transform: translate(0, 0); }
@@ -231,24 +198,6 @@ a:hover {
     50% { transform: translate(-30px, -30px); }
 }
 
-.hero-content {
-    z-index: 2;
-}
-
-.hero-title {
-    font-size: 4rem;
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.1;
-    font-weight: 900;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: #b0b0b0;
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.8;
-}
 
 .cta-button {
     display: inline-block;
@@ -269,13 +218,7 @@ a:hover {
     box-shadow: 0 15px 40px rgba(255, 85, 85, 0.4);
 }
 
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
+
 
 .image-placeholder {
     width: 100%;
@@ -443,57 +386,8 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
-.team-section {
-    margin-top: var(--spacing-xl);
-}
 
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-lg);
-}
 
-.team-member {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-md);
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 5px solid var(--color-blue);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
-}
-
-.team-member::before {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
-    background: var(--color-coral);
-    border-radius: 50%;
-    opacity: 0.15;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 102, 255, 0.2);
-    border-top-color: var(--color-coral);
-}
-
-.team-member h4 {
-    color: var(--color-text-dark);
-    margin-bottom: var(--spacing-sm);
-}
-
-.team-member p {
-    color: var(--color-coral);
-    font-weight: 600;
-    margin-bottom: 0;
-}
 
 /* ============================================
    SEÇÃO SERVIÇOS / CURSOS - LAYOUT DINÂMICO
@@ -1096,29 +990,13 @@ section {
         margin: var(--spacing-sm) 0;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
-        padding: var(--spacing-xl) var(--spacing-md);
-        min-height: auto;
-    }
 
 
 
 .portfolio-card:hover .portfolio-image img {
     transform: scale(1.1); /* Efeito de zoom elegante no hover */
 }
-    .hero-title {
-        font-size: 2.8rem;
-    }
 
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .hero-image {
-        order: -1;
-        margin-bottom: var(--spacing-lg);
-    }
 
     h2 {
         font-size: 2.5rem;
@@ -1144,9 +1022,6 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .contact-info {
         grid-template-columns: 1fr;
@@ -1167,13 +1042,7 @@ section {
         font-size: 1.8rem;
     }
 
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
+ 
 
     .cta-button {
         padding: var(--spacing-sm) var(--spacing-md);
@@ -1188,9 +1057,7 @@ section {
         font-size: 2rem;
     }
 
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
+   
 }
 
 /* Container dos cards */
@@ -1250,23 +1117,8 @@ section {
     font-size: 0.85rem;
 }
 
-/* Layout da Equipe */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Garante que os cards caibam lado a lado */
-    gap: 20px;
-    margin-top: 30px;
-}
 
-.team-member {
-    background: #1a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Todos os cards com a mesma altura */
-    border: 1px solid #333;
-}
+
 
 .member-photo {
     width: 100%;
@@ -1333,14 +1185,7 @@ section {
 /* --- FIX PARA O VISUAL BUGADO (CARDS) --- */
 /* Isso impede que as imagens "estiquem" os cards como nos prints */
 
-.portfolio-card, .team-member {
-    display: flex;
-    flex-direction: column;
-    height: 450px; /* Altura fixa para manter o alinhamento */
-    overflow: hidden; /* Corta o que sobrar da imagem */
-    background: #1a1a1a;
-    border-radius: 10px;
-}
+
 
 .portfolio-image, .member-photo {
     width: 100%;
@@ -1393,58 +1238,9 @@ section {
     }
 }
 
-.team-member .member-photo img {
-    /* Isso diz para a imagem se alinhar pelo topo, 
-       garantindo que a cabeça não seja cortada */
-    object-position: top center !important; 
-}
 
-.hero {
-    position: relative;
-    width: 100%;
-    /* 1. Definir uma altura mínima é crucial para a imagem aparecer */
-    min-height: 80vh; 
-    
-    /* 2. Centralização do conteúdo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
 
-    /* 3. A Imagem de Fundo com Overlay Escuro */
-    /* O primeiro valor (0.7) controla a escuridão. 1.0 é preto total, 0.0 é transparente */
-    background: linear-gradient(rgba(15, 15, 23, 0.75), rgba(15, 15, 23, 0.75)), 
-                url('src/banner.jpeg'); 
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* 4. Garantir que o fundo não "vaze" */
-    overflow: hidden;
-}
 
-.hero-content {
-    max-width: 800px;
-    z-index: 2; /* Garante que o texto fique acima de qualquer efeito */
-}
-
-.hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 35px;
-    line-height: 1.6;
-}
 
 .member-photo{
     max-width: 1200px; /* Ou a largura que o seu site usa como padrão */
@@ -1710,5 +1506,803 @@ section {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Velocidade do fade */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* --- SEÇÃO HERO COM SLIDER --- */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #000; /* Fundo de segurança */
+}
+
+/* Container que guarda as imagens */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Cada imagem do slider */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Começam invisíveis */
+    transition: opacity 1.2s ease-in-out; /* Efeito suave de transição */
+}
+
+/* Slide visível */
+.slide.active {
+    opacity: 1;
+}
+
+/* Camada escura para o texto ficar legível */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* 0.6 é o nível de escuridão */
+    z-index: 2;
+}
+
+/* Conteúdo (Texto e Botão) */
+.hero .container {
+    position: relative;
+    z-index: 3; /* Fica acima das imagens e do overlay */
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+.photo-slider-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px; /* Largura máxima do slider */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.photo-slide {
+    min-width: calc(33.333% - 14px); /* Mostra 3 fotos por vez no desktop */
+    height: 300px; /* Altura controlada, menor que a Hero */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o espaço sem distorcer */
+}
+
+/* Botões de Navegação */
+.prev-slide, .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-navy, #2d3a5c);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.prev-slide { left: -22px; }
+.next-slide { right: -22px; }
+
+.prev-slide:hover, .next-slide:hover {
+    background: #ff5555; /* Cor de destaque */
+}
+
+/* Responsividade: No celular mostra apenas 1 foto por vez */
+@media (max-width: 768px) {
+    .photo-slide {
+        min-width: 100%;
+    }
+    .prev-slide { left: 5px; }
+    .next-slide { right: 5px; }
+}
+
+
+.photo-slider-section {
+    padding: 60px 0;
+    background-color: #0b0b12; /* Fundo bem escuro */
+    overflow: hidden; /* Corta o que sobrar das fotos nas laterais da tela */
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Removemos o display flex daqui para não achatar o trilho */
+}
+
+.slider-track-container {
+    overflow: hidden; /* Janela por onde vemos as fotos */
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transição mais elegante */
+    padding: 10px 0;
+}
+
+.photo-slide {
+    /* No desktop mostra 3 fotos e um pedacinho da 4ª para convidar ao clique */
+    min-width: calc(33.333% - 20px); 
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botões flutuantes sobre as fotos */
+.prev-slide, .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(45, 58, 92, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+}
+
+.prev-slide { left: 10px; }
+.next-slide { right: 10px; }
+
+.prev-slide:hover, .next-slide:hover {
+    background: #ff5555;
+    scale: 1.1;
+}
+
+@media (max-width: 768px) {
+    .photo-slide {
+        min-width: 85%; /* No celular mostra uma foto quase inteira */
+    }
+}
+
+
+/* --- EQUIPE ARTÍSTICA: CORREÇÃO DEFINITIVA --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Força todos os cards a terem a mesma altura */
+}
+
+.team-member {
+    background: #1a1a1a;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.member-photo {
+    position: relative;
+    background: transparent; /* remove o fundo preto */
+    display: flex;
+    align-items: flex-end; /* empurra a imagem pra baixo */
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;          /* respeita o PNG */
+    object-fit: contain;  /* NÃO corta */
+    object-position: bottom;
+    display: block;
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. TRAVA DE ALINHAMENTO: Isso faz os nomes e cargos ficarem na mesma linha */
+.member-info h4 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    min-height: 2.8em; /* Reserva espaço para até 2 linhas de nome */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.role {
+    color: #ff5555;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    min-height: 1.2em; /* Garante que a bio comece no mesmo ponto em todos */
+}
+
+/* --- EQUIPE: ALINHAMENTO E PROTEÇÃO DE TEXTO --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+}
+
+.team-member {
+    background: #1a1a1a;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.member-photo {
+    width: 100%;
+    /* 1. Definimos uma proporção de retrato (4:5) para caber o professor e o nome embaixo */
+    aspect-ratio: 4 / 5; 
+    background-color: #000; /* Fundo preto apenas para as bordas se a imagem for menor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    /* 2. 'contain' garante que NADA da imagem seja cortado (protege o nome no JPEG) */
+    object-fit: contain; 
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Empurra o conteúdo para preencher o card */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. TRAVA DE ALINHAMENTO: Isso faz os nomes e cargos ficarem sempre na mesma linha */
+.member-info h4 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 5px;
+    min-height: 2.8em; /* Reserva espaço para nomes de até 2 linhas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.role {
+    color: #ff5555;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    min-height: 1.2em;
+}
+
+/* --- EQUIPE: REMOVENDO BARRAS PRETAS E CORTES --- */
+.member-photo {
+    width: 100%;
+    height: auto;        /* Deixa a altura livre para a imagem definir */
+    background: transparent;
+    overflow: hidden;
+    display: block;      /* Remove comportamentos de flex que criam espaços */
+    padding: 0;          /* Garante que nada empurre a imagem */
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;        /* Respeita a proporção original da arte (PNG/JPG) */
+    display: block;      /* Mata aquele espaço vazio que fica embaixo da imagem */
+    object-fit: initial; /* Reseta qualquer tentativa do navegador de 'encaixar' */
+}
+
+/* Garante que os cards continuem alinhados mesmo com imagens diferentes */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    height: 100%;        /* Faz o card esticar para igualar ao vizinho */
+    background: #111;
+    border-radius: 12px;
+}
+
+.member-info {
+    flex-grow: 1;        /* Empurra o conteúdo para baixo, alinhando as bios */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Padronização das Notícias */
+.slider-track .photo-slide {
+    flex: 0 0 calc(33.333% - 20px); 
+    aspect-ratio: 16 / 9; /* Força o formato 'cinema' padrão */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+}
+
+.slider-track .photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Aqui o cover é melhor para fotos de eventos */
+}
+/* --- CENTRALIZAÇÃO DO SLIDER DE NOTÍCIAS --- */
+.photo-slider-section {
+    padding: 80px 0;
+    background-color: #0b0b12;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o título e o container */
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; /* Largura máxima para não espalhar demais em telas 4k */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo interno */
+}
+
+.slider-track-container {
+    overflow: hidden;
+    width: 90%; /* Define a "janela" de visualização */
+    display: flex;
+    justify-content: center; /* Garante que o trilho comece centralizado */
+}
+
+.slider-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Se tiver poucos itens, eles ficam centralizados. 
+       Se tiver muitos, o JS cuida do movimento. */
+    justify-content: center; 
+}
+
+/* Ajuste no tamanho das notícias para o estilo Gshow */
+.news-item {
+    flex: 0 0 500px; /* Largura fixa para manter a proporção */
+    height: 450px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .news-item {
+        flex: 0 0 85vw; /* No celular, ocupa quase a tela toda */
+        height: 400px;
+    }
+}
+
+/* --- CONTAINER DAS NOTÍCIAS --- */
+.photo-slider-section {
+    background-color: #0b0b12; /* Fundo escuro igual ao restante */
+    padding: 80px 0;
+}
+
+.slider-container {
+    max-width: 1300px; /* Largura maior para impacto visual */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centraliza o slider na tela */
+}
+
+.slider-track-container {
+    overflow: hidden;
+    width: 90%; /* Deixa as setas nas bordas externas */
+}
+
+.news-item {
+    flex: 0 0 650px; /* Tamanho da manchete bem maior */
+    height: 450px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- OVERLAY DE TEXTO (A MANCHETE) --- */
+.news-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 30px 30px;
+    /* Gradiente do preto para o transparente (essencial para ler o texto) */
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+    color: white;
+    text-align: left;
+}
+
+.news-tag {
+    background-color: #ff5555;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.news-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.news-description {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+    max-width: 90%;
+}
+
+.news-link {
+    color: #ffd700; /* Destaque em amarelo/dourado */
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .news-item {
+        flex: 0 0 90%;
+        height: 380px;
+    }
+    .news-title { font-size: 1.4rem; }
+}
+
+.photo-slider-section {
+    padding: 80px 0;
+    background-color: #0b0b12;
+    text-align: center; /* Centraliza textos internos */
+}
+
+/* Ajuste específico para o título "Em Cartaz" */
+.centered-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Alinha o traço decorativo do título no centro */
+.centered-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza os itens do slider */
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider-track-container {
+    width: 100%; /* Ocupa o espaço central entre as setas */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-track {
+    display: flex;
+    gap: 30px;
+    justify-content: center; /* Centraliza os cards quando houver poucos */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.news-item {
+    flex: 0 0 600px; /* Tamanho grande para destaque */
+    height: 400px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .news-item {
+        flex: 0 0 85vw; /* Quase tela cheia no mobile */
+        height: 350px;
+    }
+    .centered-title {
+        font-size: 2.2rem;
+    }
+}
+
+.workshops {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05); /* Fundo sutilmente diferente */
+    border-radius: var(--radius-md);
+    margin: 40px 0;
+    border-left: 6px solid var(--color-coral); /* Destaque lateral */
+}
+
+.oficinas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajuste automático para mobile */
+}
+
+.oficinas-title {
+    font-size: 1.8rem; /* Menor que o título principal de Cursos */
+    color: #ffffff;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.oficinas-subtitle {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin-bottom: 0;
+}
+
+/* BOTÃO DE DESTAQUE */
+.btn-highlight {
+    display: inline-block;
+    background-color: var(--color-coral);
+    color: #ffffff !important;
+    padding: 12px 30px;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 15px rgba(255, 85, 85, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-highlight:hover {
+    background-color: #ff3333;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 85, 85, 0.5);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .oficinas-header {
+        text-align: center;
+        justify-content: center;
+    }
+    .btn-highlight {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-slider-section {
+        padding: 40px 0; /* Menos espaçamento vertical */
+    }
+
+    /* Garante que o container tenha padding lateral para não grudar na borda da tela */
+    .photo-slider-section .container {
+        padding: 0 15px;
+    }
+
+    /* O trilho ocupa 100% do espaço disponível */
+    .slider-track-container {
+        width: 100%;
+    }
+
+    /* No mobile, removemos o gap grande para facilitar o cálculo */
+    .slider-track {
+        gap: 0; 
+    }
+
+    /* A MUDANÇA PRINCIPAL: Força 1 slide por vez, largura total */
+    .news-item {
+        flex: 0 0 100%; 
+        height: 380px; /* Altura boa para celular */
+        border-radius: 12px; /* Bordas menos arredondadas no mobile */
+    }
+
+    /* Ajustes de texto para telas pequenas */
+    .news-content-overlay {
+        padding: 30px 20px 20px; /* Menos padding interno */
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, transparent 100%); /* Gradiente mais forte para garantir leitura */
+    }
+
+    .news-title {
+        font-size: 1.3rem; /* Título menor */
+    }
+
+    .news-description {
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limita a descrição a 2 linhas no celular */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Ajuste das setas de navegação para não atrapalharem */
+    .prev-slide, .next-slide {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        background: rgba(45, 58, 92, 0.6); /* Mais transparentes */
+    }
+    
+    .prev-slide { left: 5px; }
+    .next-slide { right: 5px; }
+}
+
+/* --- FIX DE RESPONSIVIDADE: EM CARTAZ --- */
+@media (max-width: 768px) {
+    .photo-slider-section .container {
+        padding: 0 10px; /* Evita que o slider encoste na borda do vidro */
+    }
+
+    .slider-track-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .slider-track {
+        gap: 0; /* Zeramos o gap no mobile para facilitar o cálculo do JS */
+    }
+
+    .news-item {
+        /* No mobile, cada notícia ocupa 100% da largura da tela */
+        flex: 0 0 100%; 
+        height: 420px; /* Altura ajustada para não cobrir a tela toda */
+        border-radius: 12px;
+    }
+
+    .news-content-overlay {
+        padding: 20px;
+        /* Gradiente mais escuro para garantir leitura no sol/telas pequenas */
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 70%, transparent 100%);
+    }
+
+    .news-title {
+        font-size: 1.4rem; /* Título mais amigável para polegares */
+        margin-bottom: 5px;
+    }
+
+    .news-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        /* Limita a 3 linhas para não estourar o card no mobile */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Ajuste das setas para não ficarem em cima do texto */
+    .prev-slide, .next-slide {
+        width: 35px;
+        height: 35px;
+        background: rgba(255, 85, 85, 0.8);
+        top: 40%; /* Sobe um pouco a seta */
     }
 }

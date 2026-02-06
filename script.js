@@ -1,34 +1,27 @@
-// ============================================
-// CORTINA DE TEATRO - PRELOADER
-// ============================================
-
+/* ============================================
+   CORTINA DE TEATRO - PRELOADER
+   ============================================ */
 window.addEventListener('load', function() {
     const theaterCurtain = document.querySelector('.theater-curtain');
     
-    // Aguardar um pouco para que a página esteja totalmente carregada
     setTimeout(() => {
         if (theaterCurtain) {
-            // Adicionar classe para iniciar a animação de abertura
             theaterCurtain.classList.add('open');
-            
-            // Remover a cortina após a animação terminar
             setTimeout(() => {
                 theaterCurtain.classList.add('hidden');
-            }, 1500); // Tempo da animação em ms
+            }, 1500); 
         }
-    }, 300); // Pequeno delay antes de começar a animação
+    }, 300);
 });
 
-// ============================================
-// MENU MOBILE - HAMBURGER
-// ============================================
-
+/* ============================================
+   MENU MOBILE - HAMBURGER
+   ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
-    // Toggle menu
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
@@ -36,10 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fechar menu ao clicar em um link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            // Adiciona um pequeno delay para o scroll suave funcionar antes de fechar o menu
             setTimeout(() => {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
@@ -48,10 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ============================================
-// SCROLL SUAVE
-// ============================================
-
+/* ============================================
+   SCROLL SUAVE
+   ============================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -65,10 +55,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============================================
-// EFEITO DE FADE-IN AO SCROLL (Mais orgânico)
-// ============================================
-
+/* ============================================
+   EFEITO DE FADE-IN AO SCROLL
+   ============================================ */
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -83,27 +72,121 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Aplicar observer a elementos que queremos animar
 document.querySelectorAll('.course-card, .portfolio-card, .testimonial-card, .team-member, .tribute-card, .performance-section').forEach(el => {
     el.classList.add('animate-hidden');
     observer.observe(el);
 });
 
-// Adicionar estilos de animação no CSS:
-// .animate-hidden { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-// .animate-visible { opacity: 1; transform: translateY(0); }
+/* ============================================
+   HERO SLIDER (FADE AUTOMÁTICO)
+   ============================================ */
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length === 0) return;
 
-// ============================================
-// NAVBAR STICKY COM EFEITO DE SOMBRA
-// ============================================
+    let currentSlide = 0;
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5000);
+}
 
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
-    } else {
-        header.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.15)';
+/* ============================================
+   SLIDER GALERIA (NOSSOS MOMENTOS)
+   ============================================ */
+function initGallerySlider() {
+    const container = document.querySelector('.portfolio'); // Ou a classe pai da galeria
+    if (!container) return;
+
+    const track = container.querySelector('.slider-track');
+    const nextBtn = container.querySelector('.next-slide');
+    const prevBtn = container.querySelector('.prev-slide');
+    const slides = container.querySelectorAll('.photo-slide');
+    
+    let index = 0;
+
+    function update() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+        track.style.transform = `translateX(-${index * (slideWidth + gap)}px)`;
     }
-});
 
-console.log('Script carregado com sucesso!');
+    nextBtn?.addEventListener('click', () => {
+        // Mostra 3 por vez no desktop, 1 no mobile
+        const visibleSlides = window.innerWidth > 768 ? 3 : 1;
+        index = (index < slides.length - visibleSlides) ? index + 1 : 0;
+        update();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        const visibleSlides = window.innerWidth > 768 ? 3 : 1;
+        index = (index > 0) ? index - 1 : slides.length - visibleSlides;
+        update();
+    });
+
+    window.addEventListener('resize', update);
+}
+
+/* ============================================
+   SLIDER NOTÍCIAS (EM CARTAZ - ESTILO GSHOW)
+   ============================================ */
+// --- SLIDER DE NOTÍCIAS COM CÁLCULO DINÂMICO ---
+function initNewsSlider() {
+    const container = document.querySelector('.photo-slider-section');
+    if (!container) return;
+
+    const track = container.querySelector('.slider-track');
+    const slides = container.querySelectorAll('.news-item');
+    const nextBtn = container.querySelector('.next-slide');
+    const prevBtn = container.querySelector('.prev-slide');
+    
+    let index = 0;
+
+    function move() {
+        if (slides.length === 0) return;
+        
+        // Pega a largura exata do card no momento (independente de ser desktop ou mobile)
+        const slideWidth = slides[0].offsetWidth;
+        
+        // Pega o gap definido no CSS (30px no desktop, 0 no mobile)
+        const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+        
+        // Calcula o deslocamento
+        track.style.transform = `translateX(-${index * (slideWidth + gap)}px)`;
+    }
+
+    nextBtn?.addEventListener('click', () => {
+        index = (index < slides.length - 1) ? index + 1 : 0;
+        move();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        index = (index > 0) ? index - 1 : slides.length - 1;
+        move();
+    });
+
+    // Recalcula a posição se a tela mudar de tamanho
+    window.addEventListener('resize', move);
+}
+
+// Chame a função no DOMContentLoaded
+document.addEventListener('DOMContentLoaded', initNewsSlider);
+/* ============================================
+   INICIALIZAÇÃO GLOBAL
+   ============================================ */
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+    initGallerySlider();
+    initNewsSlider();
+    
+    // Sticky Header Effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (header) {
+            header.style.boxShadow = window.scrollY > 50 
+                ? '0 8px 32px rgba(0, 0, 0, 0.3)' 
+                : '0 4px 16px rgba(0, 0, 0, 0.15)';
+        }
+    });
+});
